@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SUPERMOTARD</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index">Accueil</a></li>
+            <li class="dropdown">
+                <a href="motos">Motos</a>
+                <div class="dropdown-content">
+                    <a href="motos">Visualiser toutes les motos</a>
+                    <a href="motos_KTM">Visualiser les motos de la marque KTM</a>
+                    <a href="motos_recentes">Visualiser les motos récentes</a>
+                    <a href="motos_pas_chere">Visualiser les motos pas chères</a>
+                </div>
+            </li>
+            <li class="dropdown">
+            <a href="pilotes">Pilotes</a>
+            <div class="dropdown-content">
+                <a href="pilotes">Visualiser les pilotes existants</a>
+                <a href="ajouter_pilotes">Ajouter des pilotes</a>
+                <a href="modifier_pilotes">Modifier des pilotes</a>
+                <a href="supprimer_pilotes">Supprimer des pilotes</a>
+            </div>
+            </li>
+            <li class="dropdown">
+            <a href="vente">Vente</a>
+            <div class="dropdown-content">
+                <a href="utilisateurs">Ajouter un nouvel utilisateur</a>
+                <a href="vente">Vente aux enchères</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+  <main>
+    <h1>Vente aux enchères</h1>
+
+    <form action="encherir" method="post">
+      <label for="id_enchere">Numéro de l'enchère à laquelle vous voulez participer (1, 2, 3 ou 4) :</label>
+      <input type="number" id="id_enchere" name="id_enchere" required>
+      <br>
+      <label for="id_utilisateur">Identifiant d'utilisateur (Si vous n'en possédez pas, enregistrez vous sur la page dédié):</label>
+      <input type="text" id="id_utilisateur" name="id_utilisateur" required>
+      <br>
+      <label for="montant_enchere">Montant auquel vous voulez enchérir :</label>
+      <input type="number" id="montant_enchere" name="montant_enchere" required>
+      <br>
+      <label for="date">Date de l'enchère :</label>
+      <input type="datetime-local" id="date_enchere" name="date_enchere" required>
+      <br>
+      <input type="submit" value="Enchérir">
+    </form>
+
+    % if message : 
+    <div class="success-message">
+      ${message}
+    </div>
+    % endif 
+
+    <div class="enchere-info">
+      % for id_enchere, montant_enchere_max in montants_enchere_max :
+      <p>Montant actuel de l'enchère numéro ${ id_enchere } : ${ montant_enchere_max }</p>
+      % endfor
+    </div>    
+
+    <div class="fiches">
+      <div class="fiche" id="ktm450">
+        <img src="/image/moto_thomas_corsi.png" alt="KTM 450 EXC-F">
+        <h2>Enchère 1</h2>
+        <div class="prix-base">
+          L'enchère débute à  1 000 €
+        </div>
+        <br><br>
+        <p>Marque : KTM <br><br>
+          Modèle : EXC-F <br><br>
+          Année de fabrication : 2022<br><br>
+          Cylindrée : 450 cm2<br><br>
+          Prix neuf : 11 149 €<br><br>
+          Propriétaire :
+          <a href="pilotes#thomas" style="text-decoration: none;"> Thomas corsi</a></p>
+      </div>
+
+      <div class="fiche" id="sherco">
+        <img src="/image/moto_sherco.png" alt="SHERCO 450 SEF-R">
+        <h2>Enchère 2</h2>
+        <div class="prix-base">
+          L'enchère débute à  1 000 €
+        </div>
+        <br><br>
+        <p>Marque : SHERCO <br><br>
+          Modèle : SEF-R <br><br>
+          Année de fabrication : 2016<br><br>
+          Cylindrée : 450 cm2<br><br>
+          Prix neuf : 10 385 €<br><br>
+          Propriétaire :
+          <a href="pilotes#sherco" style="text-decoration: none;"> Shercobike</a></p>
+      </div>
+
+      <div class="fiche" id="kawa">
+        <img src="/image/moto_tekstunt.jpeg" alt="KAWASAKI 450 KX">
+        <h2>Enchère 3</h2>
+        <div class="prix-base">
+          L'enchère débute à  1 000 €
+        </div>
+        <br><br>
+        <p>Marque : KAWASAKI <br><br>
+          Modèle : KX <br><br>
+          Année de fabrication : 2022<br><br>
+          Cylindrée : 450 cm2<br><br>
+          Prix neuf : 9 099 €<br><br>
+          Propriétaire :
+          <a href="pilotes#tekstunt" style="text-decoration: none;"> Tekstunt</a></p>
+      </div>
+
+      <div class="fiche" id="TM">
+        <img src="/image/moto_thomas_chareyre.png" alt="TM SMK 450 ES FI">
+        <h2>Enchère 4</h2>
+        <div class="prix-base">
+          L'enchère débute à  1 000 €
+        </div>
+        <br><br>
+        <p>Marque : TM Racing<br><br>
+          Modèle : SMK ES FI<br><br>
+          Année de fabrication : 2023<br><br>
+          Cylindrée : 450 cm2<br><br>
+          Prix neuf : 14 599 €<br><br>
+          Propriétaire :
+          <a href="pilotes#thomas_chareyre" style="text-decoration: none;"> Thomas Chareyre</a></p>
+      </div>
+    </div>
+
+  </main>
+  
+
+  <footer>
+    <p>C'est pas de la moto, c'est du SUPERMOT !</p>
+  </footer>
+
+</body>
+</html>

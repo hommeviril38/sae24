@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SUPERMOTARD</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="index">Accueil</a></li>
+            <li class="dropdown">
+                <a href="motos">Motos</a>
+                <div class="dropdown-content">
+                    <a href="motos">Visualiser toutes les motos</a>
+                    <a href="motos_KTM">Visualiser les motos de la marque KTM</a>
+                    <a href="motos_recentes">Visualiser les motos récentes</a>
+                    <a href="motos_pas_chere">Visualiser les motos pas chères</a>
+                </div>
+            </li>
+            <li class="dropdown">
+            <a href="pilotes">Pilotes</a>
+            <div class="dropdown-content">
+                <a href="pilotes">Visualiser les pilotes existants</a>
+                <a href="ajouter_pilotes">Ajouter des pilotes</a>
+                <a href="modifier_pilotes">Modifier des pilotes</a>
+                <a href="supprimer_pilotes">Supprimer des pilotes</a>
+            </div>
+            </li>
+            <li class="dropdown">
+            <a href="vente">Vente</a>
+            <div class="dropdown-content">
+                <a href="utilisateurs">Ajouter un nouvel utilisateur</a>
+                <a href="vente">Vente aux enchères</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<h1>Inscrivez vous afin de pouvoir participer à la vente aux enchères :</h1>
+<form method="POST" action="/utilisateurs">
+    <label for="nom">Nom d'utilisateur :</label>
+    <input type="text" id="nom" name="nom" required><br>
+    <label for="id">Numéro d'utilisateur (Vérifiez qu'il n'existe pas déjà) :</label>
+    <input type="text" id="id" name="id" required><br>
+    <button type="submit">Ajouter</button>
+</form>
+
+<h1>Utilisateurs existants :</h1>
+<div class="tableau-centré">
+<table>
+  <thead>
+    <tr>
+      <th>Numéro d'utilisateur</th>
+      <th>Nom Utilisateur</th>
+    </tr>
+  </thead>
+  <tbody>
+    % for utilisateur in utilisateurs:
+    <tr>
+      <td>${utilisateur[0]}</div></td>
+      <td>${utilisateur[1]}</div></td>
+    </tr>
+    % endfor
+  </tbody>
+</table>
+<div class="tableau-centré"></div>
+
+</body>
+</html>
+
+

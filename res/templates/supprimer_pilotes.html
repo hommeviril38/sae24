@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SUPERMOTARD</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+        <ul>
+            <li><a href="index">Accueil</a></li>
+            <li class="dropdown">
+                <a href="motos">Motos</a>
+                <div class="dropdown-content">
+                    <a href="motos">Visualiser toutes les motos</a>
+                    <a href="motos_KTM">Visualiser les motos de la marque KTM</a>
+                    <a href="motos_recentes">Visualiser les motos récentes</a>
+                    <a href="motos_pas_chere">Visualiser les motos pas chères</a>
+                </div>
+            </li>
+            <li class="dropdown">
+            <a href="pilotes">Pilotes</a>
+            <div class="dropdown-content">
+                <a href="pilotes">Visualiser les pilotes existants</a>
+                <a href="ajouter_pilotes">Ajouter des pilotes</a>
+                <a href="modifier_pilotes">Modifier des pilotes</a>
+                <a href="supprimer_pilotes">Supprimer des pilotes</a>
+            </div>
+            </li>
+            <li class="dropdown">
+            <a href="vente">Vente</a>
+            <div class="dropdown-content">
+                <a href="utilisateurs">Ajouter un nouvel utilisateur</a>
+                <a href="vente">Vente aux enchères</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+  <main>
+    <h1>Supprimer un pilote</h1>
+    <form action="supprimer_pilotes" method="POST">
+      <label for="id_pilote">ID du pilote à supprimer :</label>
+      <input type="text" id="id_pilote" name="id_pilote" required>
+      <br><br>
+      <input type="submit" value="Supprimer">
+    </form>
+  </main>
+
+  <footer>
+    <p>C'est pas de la moto, c'est du SUPERMOT !</p>
+  </footer>
+
+</body>
+</html>

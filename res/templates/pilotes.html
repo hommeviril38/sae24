@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>SUPERMOTARD</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+        <ul>
+            <li><a href="index">Accueil</a></li>
+            <li class="dropdown">
+                <a href="motos">Motos</a>
+                <div class="dropdown-content">
+                    <a href="motos">Visualiser toutes les motos</a>
+                    <a href="motos_KTM">Visualiser les motos de la marque KTM</a>
+                    <a href="motos_recentes">Visualiser les motos récentes</a>
+                    <a href="motos_pas_chere">Visualiser les motos pas chères</a>
+                </div>
+            </li>
+            <li class="dropdown">
+            <a href="pilotes">Pilotes</a>
+            <div class="dropdown-content">
+                <a href="pilotes">Visualiser les pilotes existants</a>
+                <a href="ajouter_pilotes">Ajouter des pilotes</a>
+                <a href="modifier_pilotes">Modifier des pilotes</a>
+                <a href="supprimer_pilotes">Supprimer des pilotes</a>
+            </div>
+            </li>
+            <li class="dropdown">
+            <a href="vente">Vente</a>
+            <div class="dropdown-content">
+                <a href="utilisateurs">Ajouter un nouvel utilisateur</a>
+                <a href="vente">Vente aux enchères</a>
+            </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+  <main>
+    <h1>Les Pilotes</h1>
+    <div class="fiches">
+      <table>
+        <tr>
+            <th>ID Pilote</th>
+            <th>Nom</th>
+            <th>Statut</th>
+            <th>Instagram</th>
+            <th>Abonnées</th>
+        </tr>
+        % for pilote in pilotes:
+        <tr>
+          % for element in pilote:
+              <td>${element}</td>
+            % endfor
+          </tr>
+        % endfor
+    </table>
+
+    <h3>Fiches descriptives pour quelques pilotes de la base de donnée :</h3>
+
+      <div class="fiche" id="thomas">
+        <img src="/image/thomas_corsi.png" alt="Thomas Corsi">
+        <h2>Thomas Corsi</h2>
+        <p>Statut : Pilote Amateur <br><br>
+          Instagram : <a href="https://www.instagram.com/thomas_corsi/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;"> @thomas_corsi</a><br><br>
+          Nombre d'abonnées : 89 000<br><br>
+          Moto : 
+          <a href="motos#ktm450" style="text-decoration: none;"> KTM 450 EXC-F</a></p>
+      </div>
+      <div class="fiche" id ="sherco">
+        <img src="/image/sherco.png" alt="Shercobike">
+        <h2>Shercobike</h2>
+        <p>Statut : Pilote Amateur <br><br>
+          Instagram : <a href="https://www.instagram.com/shercobike/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">@shercobike</a><br><br>
+          Nombre d'abonnées : 1530<br><br>
+          Moto : 
+          <a href="motos#sherco" style="text-decoration: none;"> SHERCO 450 SEF-R</a></p>
+      </div>
+      <div class="fiche" id="tekstunt">
+        <img src="/image/tekstunt.png" alt="Tekstunt">
+        <h2>Tekstunt</h2>
+        <p>Statut : Pilote officiel pour la marque SUPERMOT <br><br>
+          Instagram : <a href="https://www.instagram.com/tekstunt/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">@tekstunt</a><br><br>
+          Nombre d'abonnées : 50 900<br><br>
+          Moto : 
+          <a href="motos#kawa" style="text-decoration: none;"> KAWASAKI 450 KX</a></p>
+      </div>
+      <div class="fiche" id="thomas_chareyre">
+        <img src="/image/thomas_chareyre.png" alt="Thomas Chareyre">
+        <h2>Thomas Chareyre</h2>
+        <p>Statut : Pilote professionnel <br><br>
+          Instagram : <a href="https://www.instagram.com/tomchareyre4/?hl=fr" target="_blank" rel="noopener noreferrer" style="text-decoration: none;"> @tomchareyre4</a><br><br>
+          Nombre d'abonnées : 38 500<br><br>
+          Moto : 
+          <a href="motos#TM" style="text-decoration: none;"> TM SMK 450 ES FI</a></p>
+      </div>
+      <div class="fiche" id ="laurent">
+        <img src="/image/laurent_fath.png" alt="Laurent Fath">
+        <h2>Laurent Fath</h2>
+        <p>Statut : Pilote professionnel <br><br>
+          Instagram : <a href="https://www.instagram.com/laurentfath/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">@laurentfath</a><br><br>
+          Nombre d'abonnées : 3 117<br><br>
+          Moto : 
+          <a href="motos#honda" style="text-decoration: none;"> Honda CRF 450 R</a></p>
+      </div>
+      <div class="fiche" id="kika">
+        <img src="/image/kikaninac.png" alt="Pilote 3">
+        <h2>Kikaninac</h2>
+        <p>Statut : Youtubeur / Créateur de la marque SUPERMOT<br><br>
+          Instagram : <a href="https://www.instagram.com/kikaninac/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">@kikaninac</a><br><br>
+          Nombre d'abonnées : 1 299 000<br><br>
+          Moto : 
+          <a href="motos#ktm500" style="text-decoration: none;"> KTM 250 EXC équipé d'un kit 500 BRC</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>C'est pas de la moto, c'est du SUPERMOT !</p>
+  </footer>
+
+</body>
+</html>
